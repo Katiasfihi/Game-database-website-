@@ -5,7 +5,7 @@ import { HttpEvent } from "@angular/common/http";
 
 
 @Injectable()
-export class HttpErrorsInterceptor implements HttpInterceptor {
+export class HttpHeadersInterceptor implements HttpInterceptor {
     constructor() {}
 
     intercept(
