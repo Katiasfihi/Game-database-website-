@@ -21,6 +21,7 @@ import { HomeComponent } from './components/home/home.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +36,8 @@ import { HomeComponent } from './components/home/home.component';
     MatIconModule,
     MatFormFieldModule,
     MatSelectModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
     {
@@ -47,7 +49,7 @@ import { HomeComponent } from './components/home/home.component';
       provide: HTTP_INTERCEPTORS,
       useClass: HttpErrorsInterceptor,
       multi: true,
-    }
+    },
   ],
   bootstrap: [AppComponent]
 })

@@ -1,7 +1,6 @@
-import { HttpHandler, HttpInterceptor, HttpRequest } from "@angular/common/http";
+import { HttpHandler, HttpInterceptor, HttpRequest, HttpEvent } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { HttpEvent } from "@angular/common/http";
 
 
 @Injectable()
@@ -11,17 +10,17 @@ export class HttpHeadersInterceptor implements HttpInterceptor {
     intercept(
         req: HttpRequest<any>,
         next: HttpHandler
-    ) : Observable<HttpEvent<any>> {
-        req = req.clone ({
-            setHeaders : {
+        ): Observable<HttpEvent<any>> {
+            req = req.clone({
+              setHeaders: {
                 'x-rapidapi-key': 'esGbwrm390mshS2BCl0RALxQRtZTp1W7sFMjsnyJlJzDXVkW0H',
                 'x-rapidapi-host': 'rawg-video-games-database.p.rapidapi.com',
               },
               setParams: {
-                 key: 'e40e743af2c94b0c916a8aa618fb4473',
-               }
-         });
-         return next.handle(req);
-    }
-}
+                key: 'e40e743af2c94b0c916a8aa618fb4473',
+              }
+            });
+            return next.handle(req);
+          }
+        }
         
